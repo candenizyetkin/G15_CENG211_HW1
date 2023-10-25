@@ -2,18 +2,9 @@
 public class SalaryManagementApp {
 
 	public static void main(String[] args) {
-		 
-		ShopAssistant shopassistant = new ShopAssistant(45,"burak","yusuf",456);
+		FileIO.readProductData("C:\\Users\\CanDeniz\\Documents\\GitHub\\G15_CENG211_HW1\\src\\products.csv");
+		 FileIO.readShopAssistantData("C:\\Users\\CanDeniz\\Downloads\\shopAssistants.csv");
 		
-		System.out.println(shopassistant.toString());
-
-		Product products = new Product(32,"tu",67);
-		
-		System.out.println(products.toString());
-		
-		Transaction transaction = new Transaction(45,null,76,54);
-		
-		System.out.println(transaction.toString());
 	}
 
 }

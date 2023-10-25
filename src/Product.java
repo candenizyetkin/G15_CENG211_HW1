@@ -3,9 +3,9 @@ public class Product {
 	
 	 private int id;
 	 private String productName;
-	 private int price;
+	 private double price;
 	 
-	 Product(int id, String productName, int price){
+	 Product(int id, String productName, double price){
 		 this.id = id;
 		 this.productName = productName;
 		 this.price = price;
@@ -15,4 +15,7 @@ public class Product {
 			
 	        return id+","+productName+","+price;
 	    }
+	  public void add() {
+		  
+	  }
 }
