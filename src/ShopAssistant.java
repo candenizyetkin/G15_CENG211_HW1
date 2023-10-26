@@ -1,4 +1,4 @@
-
+import java.util.Random;
 public class ShopAssistant {
 
  private int id;
@@ -15,9 +15,16 @@ public class ShopAssistant {
 		
 		
 	}
+	public int seniority(){
+		Random random = new Random();
+
+        int seniority  = random.nextInt(16);
+		
+		return seniority;}  
+	
 	
 	  public String toString(){
 	
-	        return id+","+name+","+surname+","+phoneNumber;
+	        return id+","+name+","+surname+","+phoneNumber+" "+ seniority();
 	    }
 }
