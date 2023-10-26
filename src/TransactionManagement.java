@@ -1,43 +1,49 @@
 import java.util.Random;
 public class TransactionManagement {
 	
-	private Product[] productArray =FileIO.readProductData(null)
+	private Product[] productArray;
 	private int [] idNumber;
-		TransactionManagement(int[] idNumber,Product[] productArray ){
+	private Transaction[][] transaction= new Transaction[100][15];
+	public TransactionManagement(int[] idNumber,Product[] productArray ){
+	
+		this.idNumber=idNumber;
 			this.productArray=productArray;
 		}
 		
 		
 		public void randomProductAssigner() {
-			 Random random = new Random();
-			 int numberOfElementsToSelect = 100;
-			 
-			 
-			 for (int i = 0; i < numberOfElementsToSelect; i++) {
-				 Product[] selectedProduct = new Product[numberOfElementsToSelect];
-				 int j=0;
-		            int randomIndex = random.nextInt(idNumber.length);
-		            int selectedProductId = idNumber[randomIndex];
-		            while(selectedProduct[3]==null) {
-		            if(productArray[i].id==selectedProductId) {
-		            selectedProduct[j]=productArray[i];
-		            }}
-		            Transaction transaction = new Transaction(3,selectedProductId,4,5);
-		            selectedTransactions[i] = transaction;
+			int transactionId=0;
+			 for(int i=0 ;i<100;i++) {
+				 for(int z=0;z<15;z++) {
+				Product[] selectedProduct=new Product[3];
+				  Random random = new Random();
+				  int randomIndex = random.nextInt(idNumber.length);
+				  int k =0;
+				  while(selectedProduct[2]==null) {
+					  
+					  for(int j=0; j<productArray.length;j++) {
+						  if(randomIndex==productArray[i].id) {
+							  selectedProduct[k]=productArray[j];
+							  k++;
+				 transactionId++;
+			 } Transaction forArray = new Transaction(transactionId,selectedProduct,5,5);
+				 transaction[i][z]= forArray;
+				
+				
+				 }   
+					  }
+				 }System.out.println(transaction[1][10]);
+			 }
+		             
 		        }
 			 
-		}
+		public void tostring() {System.out.println(transaction[1][1]);}
 		
-		public void randomProductAssigner() {
-			
-		}
+	
 		
-		public Product productIdMatch(){
-			
-			for (int i = 0; i < )
-			
-		}
-		
-		
-		
+	
 }
+		
+		
+		
+

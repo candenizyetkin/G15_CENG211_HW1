@@ -13,9 +13,11 @@ class FileIO {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
             int i =0;
+            int[] idNumber= new int[90];
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(";");
                 int ID = Integer.parseInt(data[0]);
+                idNumber[i]=ID;
                 String productName = data[1];
                 data[2]=data[2].replace(",",".");
                 double price = Double.parseDouble(data[2]);
@@ -30,18 +32,37 @@ class FileIO {
 
         return products;
     }
+    public static int[] IdCounter(String filename) {
+             int[] idNumber= new int[90];
+      
+       try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+           String line;
+           int i =0;
+      
+           while ((line = br.readLine()) != null) {
+               String[] data = line.split(";");
+               int ID = Integer.parseInt(data[0]);
+               idNumber[i]=ID;
+               
+               i++;
+           }
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
 
+       return idNumber;
+   }
     // Method to read shop assistant data from 'shopAssistants.csv' file
     public static ShopAssistant[] readShopAssistantData(String filename) {
         ShopAssistant[] assistants=new ShopAssistant[100];
-        int[] idNumber= new int[100];
+        
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
             int i =0;
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(";");
                 int ID = Integer.parseInt(data[0]);
-                idNumber[i]=ID;
+                
                 String name = data[1];
                 String surname = data[2];
                 data[3]=data[3].replace("-","");
@@ -57,5 +78,6 @@ class FileIO {
 
         return assistants;
     }
+    	
 }
 

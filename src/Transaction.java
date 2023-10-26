@@ -2,18 +2,21 @@
 public class Transaction {
 	
 	private int id;
-	private String[] products;
-	private double totalPrice;
-	private double transactionFee;
+	private Product[] products;
+	private float totalPrice;
+	private float transactionFee;
 	
-	Transaction(int id,String[] products, double totalPrice, double transactionFee){
+	Transaction(int id,Product[] products, float totalPrice, float transactionFee){
 		this.id = id;
-		this.products = new String[3];
+		this.products =  products;
 		this.totalPrice = totalPrice;
 
 		this.transactionFee = transactionFee;
 		}
-	 public String toString(){
+	
+	
+
+	public String toString(){
 			
 	        return id+","+products+","+totalPrice+","+transactionFee;
 	    }
