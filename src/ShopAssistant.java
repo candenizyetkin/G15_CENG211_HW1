@@ -14,10 +14,13 @@ public class ShopAssistant {
 		this.name = name; 
 		this.surname = surname;
 		this.phoneNumber = phoneNumber;
-		
+		this.totalSalary=totalSalary;
 		
 		
 	}
+
+		
+	
 	public int seniority(){
 		Random random = new Random();
 

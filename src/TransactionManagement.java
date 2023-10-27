@@ -41,16 +41,18 @@ public class TransactionManagement {
 							  selectedProduct[2].price*selectedProduct[2].quantity;
 							  Transaction transactionInTwoDimantionalArray = new Transaction(transactionId,selectedProduct,totalPrice,5);
 					 				transaction[i][z]= transactionInTwoDimantionalArray;
-					 				System.out.println( transaction[i][z].products[0].price + " " +  transaction[i][z].products[0].quantity + " " +
-					 			transaction[i][z].products[1].price + " " +  transaction[i][z].products[1].quantity+ " "+
-					 						transaction[i][z].products[2].price + " " +  transaction[i][z].products[2].quantity+ " " +transaction[i][z].totalPrice);
+					 			//	System.out.println( transaction[i][z].products[0].price + " " +  transaction[i][z].products[0].quantity + " " +
+					 			//transaction[i][z].products[1].price + " " +  transaction[i][z].products[1].quantity+ " "+
+					 			//			transaction[i][z].products[2].price + " " +  transaction[i][z].products[2].quantity+ " " +transaction[i][z].totalPrice);
 				
 				 }
 			 
-			}
-		             
+			}SalaryManagement a =new SalaryManagement();
+			a.totalSalaryForAssistants(transaction,	FileIO.readShopAssistantData("C:\\Users\\genyu\\Downloads\\shopAssistants.csv"));
+			FileIO.readShopAssistantData("C:\\Users\\genyu\\Downloads\\shopAssistants.csv")[1].totalSalary=5;
+		             System.out.println(FileIO.readShopAssistantData("C:\\Users\\genyu\\Downloads\\shopAssistants.csv")[1].comission+1);
 		        }
-		
+	
 			 
 
 		
