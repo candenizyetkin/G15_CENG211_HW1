@@ -40,9 +40,17 @@ public class TransactionManagement {
 					  }double totalPrice=selectedProduct[0].price*selectedProduct[0].quantity +
 							  selectedProduct[1].price*selectedProduct[1].quantity+
 							  selectedProduct[2].price*selectedProduct[2].quantity;
-							  Transaction transactionInTwoDimantionalArray = new Transaction(transactionId,selectedProduct,totalPrice,5);
+					  double fee;
+					  if(totalPrice<=499) {
+						  fee=totalPrice*0.01;
+					  }else if(totalPrice<=799) {
+						  fee=totalPrice*0.03;
+					  }else if(totalPrice<=999) {
+						  fee=totalPrice*0.05;
+					  }else {fee=totalPrice*0.09;}
+							  Transaction transactionInTwoDimantionalArray = new Transaction(transactionId,selectedProduct,totalPrice,fee);
 					 				transaction[i][z]= transactionInTwoDimantionalArray;
-					 			//	System.out.println( transaction[i][z].products[0].price + " " +  transaction[i][z].products[0].quantity + " " +
+					 				System.out.println( transaction[i][z].transactionFee+" weferg"+ transaction[i][z].totalPrice );
 					 			//transaction[i][z].products[1].price + " " +  transaction[i][z].products[1].quantity+ " "+
 					 			//			transaction[i][z].products[2].price + " " +  transaction[i][z].products[2].quantity+ " " +transaction[i][z].totalPrice);
 				

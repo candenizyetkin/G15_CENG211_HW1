@@ -4,7 +4,7 @@ public class Transaction {
 	private int id;
 	public Product[] products;
 	public double totalPrice;
-	private double transactionFee;
+	public double transactionFee;
 	
 	Transaction(int id,Product[] products, double totalPrice, double transactionFee){
 		this.id = id;
