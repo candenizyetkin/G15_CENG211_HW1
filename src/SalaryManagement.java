@@ -1,37 +1,45 @@
 
 public class SalaryManagement {
- double totalSalesofEachAssistant = 0;
+ 
  double comission;
  double totalSalary;
- SalaryManagement(){}
+ public ShopAssistant[] assist;
+ public Transaction[][] temp;
+ SalaryManagement(ShopAssistant[] assist,Transaction[][] temp){
+	 this.assist=assist;
+	 this.temp=temp;
+	
+	 
+ }
  
- public void totalSalesForEachAssistant(Transaction[][] temp, ShopAssistant[] asist) {
+ public void totalSalesForEachAssistant(ShopAssistant[] assist,Transaction[][] temp) {
 	    
 	 	for (int i=0 ;i<100;i++) {
+	 		double totalSalesofEachAssistant = 0;
 	    	for (int z=0;z<15;z++) {
 	    		totalSalesofEachAssistant = totalSalesofEachAssistant + temp[i][z].totalPrice;
 	    	
 	    	}if(totalSalesofEachAssistant > 7500){
     			comission = totalSalesofEachAssistant*0.03;
-    			asist[i].comission=comission;
+    			assist[i].comission=comission;
     			
     					
     	}
 	    	else {
     		    comission = totalSalesofEachAssistant*0.01;
-    		    asist[i].comission=comission;
+    		    assist[i].comission=comission;
     		    
     		    
     	}
   }}
 	 
- public void totalSalaryForAssistants(Transaction[][] temp, ShopAssistant[] asist){
+ public void totalSalaryForAssistants(ShopAssistant[] assist,Transaction[][] temp){
 
-	 		totalSalesForEachAssistant(temp,asist);
+	 		totalSalesForEachAssistant(assist,temp);
 	 		for (int i=0 ;i<100;i++) {
-	 			totalSalary=asist[i].comission + 4* asist[i].weeklySallary();
+	 			totalSalary=assist[i].comission + 4* assist[i].weeklySallary();
 	//	asist[i].totalSalary=totalSalary;
-	 			asist[1].totalSalary=5;
+	 			assist[i].totalSalary=totalSalary;
 	} 	
  
  }

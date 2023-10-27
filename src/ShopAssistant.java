@@ -2,7 +2,7 @@ import java.util.Random;
 public class ShopAssistant {
 
  private int id;
- private String name;
+ String name;
  private String surname;
  private int phoneNumber;
  public double comission;

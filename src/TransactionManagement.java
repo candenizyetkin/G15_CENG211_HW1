@@ -1,14 +1,15 @@
 import java.util.Random;
 
 public class TransactionManagement {
-	
+	private ShopAssistant[] shopassistant;
 	private Product[] productArray;
 	private int [] idNumber;
 	private Transaction[][] transaction= new Transaction[100][15];
-	public TransactionManagement(int[] idNumber,Product[] productArray ){
+	public TransactionManagement(int[] idNumber,Product[] productArray,ShopAssistant[]shopassistant ){
 	
 		this.idNumber=idNumber;
 			this.productArray=productArray;
+			this.shopassistant=shopassistant;
 		}
 		
 		
@@ -46,11 +47,12 @@ public class TransactionManagement {
 					 			//			transaction[i][z].products[2].price + " " +  transaction[i][z].products[2].quantity+ " " +transaction[i][z].totalPrice);
 				
 				 }
-			 
-			}SalaryManagement a =new SalaryManagement();
-			a.totalSalaryForAssistants(transaction,	FileIO.readShopAssistantData("C:\\Users\\genyu\\Downloads\\shopAssistants.csv"));
-			FileIO.readShopAssistantData("C:\\Users\\genyu\\Downloads\\shopAssistants.csv")[1].totalSalary=5;
-		             System.out.println(FileIO.readShopAssistantData("C:\\Users\\genyu\\Downloads\\shopAssistants.csv")[1].comission+1);
+				 
+			}SalaryManagement a =new SalaryManagement(	shopassistant,transaction);
+			a.totalSalaryForAssistants(	shopassistant,transaction);
+			for(int i=0 ;i<100;i++) {
+		             System.out.println(" "+shopassistant[i].totalSalary);
+			}
 		        }
 	
 			 
