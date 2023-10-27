@@ -9,6 +9,7 @@ public class SalaryManagementApp {
 		 app.randomProductAssigner();
 		 app.toString();
 		
+		
 
 		
 	}

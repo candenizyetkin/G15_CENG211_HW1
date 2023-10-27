@@ -50,7 +50,7 @@ public class TransactionManagement {
 					  }else {fee=totalPrice*0.09;}
 							  Transaction transactionInTwoDimantionalArray = new Transaction(transactionId,selectedProduct,totalPrice,fee);
 					 				transaction[i][z]= transactionInTwoDimantionalArray;
-					 				System.out.println( transaction[i][z].transactionFee+" weferg"+ transaction[i][z].totalPrice );
+					 				//System.out.println( transaction[i][z].transactionFee+" weferg"+ transaction[i][z].totalPrice );
 					 			//transaction[i][z].products[1].price + " " +  transaction[i][z].products[1].quantity+ " "+
 					 			//			transaction[i][z].products[2].price + " " +  transaction[i][z].products[2].quantity+ " " +transaction[i][z].totalPrice);
 				
@@ -58,6 +58,9 @@ public class TransactionManagement {
 				 
 			}SalaryManagement a =new SalaryManagement(	shopassistant,transaction);
 			a.totalSalaryForAssistants(	shopassistant,transaction);
+			Query show= new Query(shopassistant,transaction);
+			
+			show.displayer();
 			for(int i=0 ;i<100;i++) {
 		             System.out.println(" "+shopassistant[i].totalSalary);
 			}
