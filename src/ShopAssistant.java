@@ -6,6 +6,7 @@ public class ShopAssistant {
  private String surname;
  private int phoneNumber;
  public double comission;
+ public double totalSalary;
 
 	ShopAssistant(int id, String name, String surname, int phoneNumber ){
 		
@@ -24,9 +25,19 @@ public class ShopAssistant {
 		
 		return seniority;}  
 	
-	
+	public double weeklySallary() {
+		if(seniority()<=1) {
+			return 1500;
+		}
+		else if(seniority()<=3) {
+			return 2000;
+		}
+		else if(seniority()<=5) {
+			return 2500;
+		}else {return 3000;}
+	}
 	  public String toString(){
 	
-	        return id+","+name+","+surname+","+phoneNumber+" "+ seniority();
+	        return id+","+name+","+surname+","+phoneNumber+" "+ seniority()+ " "+ weeklySallary();
 	    }
 }

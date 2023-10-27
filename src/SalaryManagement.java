@@ -2,6 +2,7 @@
 public class SalaryManagement {
  double totalSalesofEachAssistant = 0;
  double comission;
+ double totalSalary;
  SalaryManagement(){}
  
  public void totalSalesForEachAssistant(Transaction[][] temp, ShopAssistant[] asist) {
@@ -22,8 +23,16 @@ public class SalaryManagement {
     		    
     		    
     	}
-  }
+  }}
 	 
+ public void totalSalaryForAssistants(String filePath ,Transaction[][] temp, ShopAssistant[] asist){
+	 FileIO.readShopAssistantData(filePath);
+	 		totalSalesForEachAssistant(temp,asist);
+	 		for (int i=0 ;i<100;i++) {
+	 			totalSalary=asist[i].comission + 4* asist[i].weeklySallary();
+		asist[i].totalSalary=totalSalary;
+	} 	
+ 
  }
 
 }

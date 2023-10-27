@@ -13,6 +13,7 @@ public class TransactionManagement {
 		
 		
 		public void randomProductAssigner() {
+			FileIO.readProductData("C:\\Users\\genyu\\Documents\\GitHub\\G15_CENG211_HW1\\src\\products.csv");
 			int transactionId=0;
 			 
 			for(int i=0 ;i<100;i++) {
@@ -51,7 +52,7 @@ public class TransactionManagement {
 		        }
 		
 			 
-//		public void tostring() {System.out.println(transaction[1][1]);}
+
 		
 }
 		
