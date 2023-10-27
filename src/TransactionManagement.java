@@ -1,4 +1,5 @@
 import java.util.Random;
+
 public class TransactionManagement {
 	
 	private Product[] productArray;
@@ -27,20 +28,28 @@ public class TransactionManagement {
 					 					selectedProduct[k]=productArray[j];
 					 					k++;
 					 					transactionId++;
-					 				} 	
-					 				Transaction forArray = new Transaction(transactionId,selectedProduct,5,5);
-					 				transaction[i][z]= forArray;
+					 				}else {}
+					 				
+					 				
 					 		
 				
 				
 				 }   	
-					  }System.out.println(transaction[i][z].products[0]);
+					  }double totalPrice=selectedProduct[0].price*selectedProduct[0].quantity +
+							  selectedProduct[1].price*selectedProduct[1].quantity+
+							  selectedProduct[2].price*selectedProduct[2].quantity;
+							  Transaction transactionInTwoDimantionalArray = new Transaction(transactionId,selectedProduct,totalPrice,5);
+					 				transaction[i][z]= transactionInTwoDimantionalArray;
+					 				System.out.println( transaction[i][z].products[0].price + " " +  transaction[i][z].products[0].quantity + " " +
+					 			transaction[i][z].products[1].price + " " +  transaction[i][z].products[1].quantity+ " "+
+					 						transaction[i][z].products[2].price + " " +  transaction[i][z].products[2].quantity+ " " +transaction[i][z].totalPrice);
 				
 				 }
 			 
 			}
 		             
 		        }
+		
 			 
 //		public void tostring() {System.out.println(transaction[1][1]);}
 		

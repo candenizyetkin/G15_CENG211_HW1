@@ -1,7 +1,8 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-
+import java.util.Random;
+import java.util.Random;
 
 class FileIO {
     // Define methods to read data from CSV files
@@ -9,19 +10,21 @@ class FileIO {
     // Method to read product data from 'products.CSV' file
     public static Product[] readProductData(String filename) {
          Product [] products = new Product [90] ;
-       
+     
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
             int i =0;
             int[] idNumber= new int[90];
-            while ((line = br.readLine()) != null) {
+            while ((line = br.readLine()) != null) { 
+            	Random random = new Random();
                 String[] data = line.split(";");
                 int ID = Integer.parseInt(data[0]);
                 idNumber[i]=ID;
                 String productName = data[1];
                 data[2]=data[2].replace(",",".");
                 double price = Double.parseDouble(data[2]);
-                Product product = new Product(ID, productName, price);
+                int quantity=random.nextInt(10) + 1;
+                Product product = new Product(ID, productName, price,quantity);
            
                 products[i]=product;
                 i++;
@@ -32,6 +35,11 @@ class FileIO {
 
         return products;
     }
+    
+		 
+		  
+		  
+	
     public static int[] IdCounter(String filename) {
              int[] idNumber= new int[90];
       

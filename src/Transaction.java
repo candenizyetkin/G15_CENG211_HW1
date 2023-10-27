@@ -3,10 +3,10 @@ public class Transaction {
 	
 	private int id;
 	public Product[] products;
-	private float totalPrice;
-	private float transactionFee;
+	public double totalPrice;
+	private double transactionFee;
 	
-	Transaction(int id,Product[] products, float totalPrice, float transactionFee){
+	Transaction(int id,Product[] products, double totalPrice, double transactionFee){
 		this.id = id;
 		this.products =  products;
 		this.totalPrice = totalPrice;
