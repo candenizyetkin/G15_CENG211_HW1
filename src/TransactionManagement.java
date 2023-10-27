@@ -13,35 +13,37 @@ public class TransactionManagement {
 		
 		public void randomProductAssigner() {
 			int transactionId=0;
-			 for(int i=0 ;i<100;i++) {
+			 
+			for(int i=0 ;i<100;i++) {
 				 for(int z=0;z<15;z++) {
-				Product[] selectedProduct=new Product[3];
-				  Random random = new Random();
-				  int randomIndex = random.nextInt(idNumber.length);
-				  int k =0;
-				  while(selectedProduct[2]==null) {
-					  
-					  for(int j=0; j<productArray.length;j++) {
-						  if(randomIndex==productArray[i].id) {
-							  selectedProduct[k]=productArray[j];
-							  k++;
-				 transactionId++;
-			 } Transaction forArray = new Transaction(transactionId,selectedProduct,5,5);
-				 transaction[i][z]= forArray;
+					 Product[] selectedProduct=new Product[3];
+					 
+					 int k =0;
+					 	while(selectedProduct[2]==null) {
+					  Random random = new Random();
+					 int randomIndex = random.nextInt(idNumber.length);
+					 			for(int j=0; j<productArray.length;j++) {
+					 				if(randomIndex==productArray[j].id) {
+					 					selectedProduct[k]=productArray[j];
+					 					k++;
+					 					transactionId++;
+					 				} 	
+					 				Transaction forArray = new Transaction(transactionId,selectedProduct,5,5);
+					 				transaction[i][z]= forArray;
+					 		
 				
 				
-				 }   
-					  }
-				 }System.out.println(transaction[1][10]);
-			 }
+				 }   	
+					  }System.out.println(transaction[i][z].products[0]);
+				
+				 }
+			 
+			}
 		             
 		        }
 			 
-		public void tostring() {System.out.println(transaction[1][1]);}
+//		public void tostring() {System.out.println(transaction[1][1]);}
 		
-	
-		
-	
 }
 		
 		

@@ -22,7 +22,7 @@ class FileIO {
                 data[2]=data[2].replace(",",".");
                 double price = Double.parseDouble(data[2]);
                 Product product = new Product(ID, productName, price);
-                System.out.println( product.toString());
+           
                 products[i]=product;
                 i++;
             }
@@ -68,7 +68,7 @@ class FileIO {
                 data[3]=data[3].replace("-","");
                 int phoneNumber = Integer.parseInt(data[3]);
                 ShopAssistant assistant = new ShopAssistant(ID, name, surname, phoneNumber);
-               System.out.println( assistant.toString());
+             
                 assistants[i]=assistant;
                 i++;
             }

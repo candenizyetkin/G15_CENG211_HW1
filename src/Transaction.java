@@ -2,7 +2,7 @@
 public class Transaction {
 	
 	private int id;
-	private Product[] products;
+	public Product[] products;
 	private float totalPrice;
 	private float transactionFee;
 	
