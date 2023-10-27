@@ -5,6 +5,7 @@ public class ShopAssistant {
  private String name;
  private String surname;
  private int phoneNumber;
+ public double comission;
 
 	ShopAssistant(int id, String name, String surname, int phoneNumber ){
 		
@@ -12,6 +13,7 @@ public class ShopAssistant {
 		this.name = name; 
 		this.surname = surname;
 		this.phoneNumber = phoneNumber;
+		
 		
 		
 	}
