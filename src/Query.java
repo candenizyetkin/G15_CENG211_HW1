@@ -26,8 +26,8 @@ public class Query {
 	
 		int indexOfTheMostExpensiveProduct = 0;
 		double min = transaction[0][0].totalPrice;
-        for (int i=0 ;i<100;i++) {
-	    	for (int z=0;z<15;z++) {
+        for (int i=0 ;i<shopAssistant.length;i++) {
+	    	for (int z=0;z<transaction[1].length;z++) {
 	    		 
 	    	if (transaction[i][z].totalPrice < min) {
 	    	    firstIndex = i;
@@ -38,7 +38,7 @@ public class Query {
 	    }
 
 	} double max = transaction[firstIndex][secondIndex].products[0].price ;
-			 for (int f=1; f<3; f++) {
+			 for (int f=1; f<transaction[firstIndex][secondIndex].products.length; f++) {
 				if (transaction[firstIndex][secondIndex].products[f].price > max) {
 					max = transaction[firstIndex][secondIndex].products[f].price; 
 					indexOfTheMostExpensiveProduct = f;
@@ -50,8 +50,8 @@ public class Query {
 
 	public double highestTotalPrice(){
        double max = transaction[0][0].totalPrice;
-       	for (int i=0 ;i<100;i++) {
-	    	for (int z=0;z<15;z++) {
+       	for (int i=0 ;i<shopAssistant.length;i++) {
+	    	for (int z=0;z<transaction[1].length;z++) {
 	    		
 	    	if (transaction[i][z].totalPrice > max) {
 	    	        max = transaction[i][z].totalPrice;
@@ -64,8 +64,8 @@ public class Query {
 		
 	public double lowestTransactionFee(){
 		double lowestFee=transaction[0][0].transactionFee;
-		for(int i =0;i<100;i++) {
-			for(int j =0;j<15;j++) {
+		for(int i =0;i<shopAssistant.length;i++) {
+			for(int j =0;j<transaction[1].length;j++) {
 				if(lowestFee>transaction[i][j].transactionFee) {
 					lowestFee=transaction[i][j].transactionFee;
 					
@@ -96,8 +96,8 @@ public class Query {
 	public double totalRevenueValue(){
 		double totalRevenueValue = 0;
 	
-		for (int i=0;i<100;i++) {
-			for (int j=0;j<15;j++) {
+		for (int i=0;i<shopAssistant.length;i++) {
+			for (int j=0;j<transaction[1].length;j++) {
 				totalRevenueValue+= (transaction[i][j].totalPrice+transaction[i][j].transactionFee);
 			}
 		}
@@ -108,8 +108,8 @@ public class Query {
 	public String totalRevenue(){
 		double totalRevenueValue = 0;
 	
-		for (int i=0;i<100;i++) {
-			for (int j=0;j<15;j++) {
+		for (int i=0;i<shopAssistant.length;i++) {
+			for (int j=0;j<transaction[1].length;j++) {
 				totalRevenueValue+= (transaction[i][j].totalPrice+transaction[i][j].transactionFee);
 			}
 		}

@@ -4,25 +4,27 @@ public class TransactionManagement {
 	private ShopAssistant[] shopassistant;
 	private Product[] productArray;
 	private int [] idNumber;
-	private Transaction[][] transaction= new Transaction[100][15];
+	private Transaction[][] transaction;
 	public TransactionManagement(int[] idNumber,Product[] productArray,ShopAssistant[]shopassistant ){
 	
 		this.idNumber=idNumber;
 			this.productArray=productArray;
 			this.shopassistant=shopassistant;
+			
 		}
 		
 		
-		public void randomProductAssigner() {
+		public Transaction[][] randomProductAssigner(int productNumber,int transactionNumber) {
+			transaction= new Transaction[shopassistant.length][transactionNumber];
 			FileIO.readProductData("C:\\Users\\genyu\\Documents\\GitHub\\G15_CENG211_HW1\\src\\products.csv");
 			int transactionId=0;
 			 
-			for(int i=0 ;i<100;i++) {
-				 for(int z=0;z<15;z++) {
-					 Product[] selectedProduct=new Product[3];
+			for(int i=0 ;i<shopassistant.length;i++) {
+				 for(int z=0;z<transactionNumber;z++) {
+					 Product[] selectedProduct=new Product[productNumber];
 					 
 					 int k =0;
-					 	while(selectedProduct[2]==null) {
+					 	while(selectedProduct[productNumber-1]==null) {
 					  Random random = new Random();
 					 int randomIndex = random.nextInt(idNumber.length);
 					 			for(int j=0; j<productArray.length;j++) {
@@ -37,9 +39,12 @@ public class TransactionManagement {
 				
 				
 				 }   	
-					  }double totalPrice=selectedProduct[0].price*selectedProduct[0].quantity +
-							  selectedProduct[1].price*selectedProduct[1].quantity+
-							  selectedProduct[2].price*selectedProduct[2].quantity;
+					  }double totalPrice=0;
+					 	for(int j =0; j<productNumber;j++) {
+					 		totalPrice+=selectedProduct[j].price*selectedProduct[j].quantity ;
+							 // selectedProduct[1].price*selectedProduct[1].quantity+
+							  //selectedProduct[2].price*selectedProduct[2].quantity;
+					 		}
 					  double fee;
 					  if(totalPrice<=499) {
 						  fee=totalPrice*0.01;
@@ -58,13 +63,13 @@ public class TransactionManagement {
 				 
 			}SalaryManagement a =new SalaryManagement(	shopassistant,transaction);
 			a.totalSalaryForAssistants(	shopassistant,transaction);
-			Query show= new Query(shopassistant,transaction);
-			
-			show.displayer();
-			for(int i=0 ;i<100;i++) {
-		             System.out.println(" "+shopassistant[i].totalSalary);
-			}
-		        }
+
+
+			//for(int i=0 ;i<100;i++) {
+		  //           System.out.println(" "+shopassistant[i].totalSalary);
+			//}
+		       
+		return transaction;}
 	
 			 
 

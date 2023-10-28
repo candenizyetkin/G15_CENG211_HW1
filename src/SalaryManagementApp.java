@@ -3,11 +3,11 @@ public class SalaryManagementApp {
 
 	public static void main(String[] args) {
 		
-		FileIO.readProductData("C:\\Users\\genyu\\Documents\\GitHub\\G15_CENG211_HW1\\src\\products.csv");
-		 FileIO.readShopAssistantData("C:\\Users\\genyu\\Downloads\\shopAssistants.csv");
-		 TransactionManagement app = new TransactionManagement(FileIO.IdCounter("C:\\Users\\genyu\\Documents\\GitHub\\G15_CENG211_HW1\\src\\products.csv"),FileIO.readProductData("C:\\Users\\genyu\\Documents\\GitHub\\G15_CENG211_HW1\\src\\products.csv"), FileIO.readShopAssistantData("C:\\Users\\genyu\\Downloads\\shopAssistants.csv"));
-		 app.randomProductAssigner();
-		 app.toString();
+		 Product[] productArray = FileIO.readProductData("src\\products.csv");
+		 ShopAssistant[] shopAssistantArray= FileIO.readShopAssistantData("src\\shopAssistants.csv");
+		 TransactionManagement app = new TransactionManagement(FileIO.IdCounter("src\\products.csv"),productArray, shopAssistantArray);
+		 Query show= new Query(shopAssistantArray, app.randomProductAssigner(3,15));
+		 show.displayer();
 		
 		
 

@@ -14,9 +14,9 @@ public class SalaryManagement {
  
  public void totalSalesForEachAssistant(ShopAssistant[] assist,Transaction[][] temp) {
 	    
-	 	for (int i=0 ;i<100;i++) {
+	 	for (int i=0 ;i<assist.length;i++) {
 	 		double totalSalesofEachAssistant = 0;
-	    	for (int z=0;z<15;z++) {
+	    	for (int z=0;z<temp[1].length;z++) {
 	    		totalSalesofEachAssistant = totalSalesofEachAssistant + temp[i][z].totalPrice;
 	    	
 	    	}if(totalSalesofEachAssistant > 7500){

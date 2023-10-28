@@ -9,7 +9,7 @@ class FileIO {
     
     // Method to read product data from 'products.CSV' file
     public static Product[] readProductData(String filename) {
-         Product [] products = new Product [90] ;
+         Product [] products = new Product [fileLineCounter(filename)] ;
      
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
@@ -37,7 +37,21 @@ class FileIO {
     }
     
 		 
-		  
+    public static int fileLineCounter(String dosyaAdi) {
+        int lineCounter = 0;
+
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(dosyaAdi));
+            while (bufferedReader.readLine() != null) {
+            	lineCounter++;
+            }
+            bufferedReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return lineCounter;
+    }
 		  
 	
     public static int[] IdCounter(String filename) {
@@ -62,7 +76,7 @@ class FileIO {
    }
     // Method to read shop assistant data from 'shopAssistants.csv' file
     public static ShopAssistant[] readShopAssistantData(String filename) {
-        ShopAssistant[] assistants=new ShopAssistant[100];
+        ShopAssistant[] assistants=new ShopAssistant[fileLineCounter(filename)];
         
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
