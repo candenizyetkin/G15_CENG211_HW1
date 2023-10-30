@@ -72,7 +72,7 @@ class FileIO {
 
        return idNumber;
    }
-    // Method to read shop assistant data from 'shopAssistants.csv' file
+   
     public static ShopAssistant[] readShopAssistantData(String filename) {
         ShopAssistant[] assistants=new ShopAssistant[fileLineCounter(filename)];
         
