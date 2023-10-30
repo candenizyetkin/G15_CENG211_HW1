@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class TransactionManagement {
-	private ShopAssistant[] shopassistant;
+	private ShopAssistant[] shopAssistantArray;
 	private Product[] productArray;
 	private int [] idNumber;
 	private Transaction[][] transaction;
@@ -9,17 +9,17 @@ public class TransactionManagement {
 	
 		this.idNumber=idNumber;
 			this.productArray=productArray;
-			this.shopassistant=shopassistant;
+			this.shopAssistantArray=shopassistant;
 			
 		}
 		
 		
 		public Transaction[][] randomProductAssigner(int productNumber,int transactionNumber) {
-			transaction= new Transaction[shopassistant.length][transactionNumber];
+			transaction= new Transaction[shopAssistantArray.length][transactionNumber];
 			
 			int transactionId=0;
 			 
-			for(int i=0 ;i<shopassistant.length;i++) {
+			for(int i=0 ;i<shopAssistantArray.length;i++) {
 				 for(int z=0;z<transactionNumber;z++) {
 					 Product[] selectedProduct=new Product[productNumber];
 					 
@@ -55,20 +55,14 @@ public class TransactionManagement {
 					  }else {fee=totalPrice*0.09;}
 							  Transaction transactionInTwoDimantionalArray = new Transaction(transactionId,selectedProduct,totalPrice,fee);
 					 				transaction[i][z]= transactionInTwoDimantionalArray;
-					 				//System.out.println( "fee  "+transaction[i][z].transactionFee+"  totalprice"+ transaction[i][z].totalPrice+ " transaction[i][z].products[1].price "+ transaction[i][z].products[1].price + " transaction[i][z].products[1].quantity " +  transaction[i][z].products[1].quantity+" "+transaction[i][z].products[2].price + " transaction[i][z].products[2].quantity " +  transaction[i][z].products[2].quantity);
-									 		//				transaction[i][z].products[2].price + " " +  transaction[i][z].products[2].quantity+ " " +transaction[i][z].totalPrice );
-					 	//		transaction[i][z].products[1].price + " " +  transaction[i][z].products[1].quantity+ " "+
-					 		//				transaction[i][z].products[2].price + " " +  transaction[i][z].products[2].quantity+ " " +transaction[i][z].totalPrice);
-				
+					 		
 				 }
 				 
-			}SalaryManagement a =new SalaryManagement(	shopassistant,transaction);
-			a.totalSalaryForAssistants(	shopassistant,transaction);
+			}SalaryManagement a =new SalaryManagement(	shopAssistantArray,transaction);
+			a.totalSalaryForAssistants(	shopAssistantArray,transaction);
 
 
-			//for(int i=0 ;i<100;i++) {
-		  //           System.out.println(" "+shopassistant[i].totalSalary);
-			//}
+		
 		       
 		return transaction;}
 	
