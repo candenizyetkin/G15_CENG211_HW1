@@ -14,7 +14,7 @@ class FileIO {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
             int i =0;
-            int[] idNumber= new int[90];
+            int[] idNumber= new int[fileLineCounter(filename)];
             while ((line = br.readLine()) != null) { 
             	Random random = new Random();
                 String[] data = line.split(";");
@@ -55,7 +55,7 @@ class FileIO {
 		  
 	
     public static int[] IdCounter(String filename) {
-             int[] idNumber= new int[90];
+             int[] idNumber= new int[fileLineCounter(filename)];
       
        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
            String line;
