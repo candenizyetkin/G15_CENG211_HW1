@@ -17,17 +17,17 @@ public class SalaryManagement {
 	 	for (int i=0 ;i<assist.length;i++) {
 	 		double totalSalesofEachAssistant = 0;
 	    	for (int z=0;z<temp[1].length;z++) {
-	    		totalSalesofEachAssistant = totalSalesofEachAssistant + temp[i][z].totalPrice;
+	    		totalSalesofEachAssistant = totalSalesofEachAssistant + temp[i][z].getTotalPrice();
 	    	
 	    	}if(totalSalesofEachAssistant > 7500){
     			comission = totalSalesofEachAssistant*0.03;
-    			assist[i].comission=comission;
+    			assist[i].setComission(comission);
     			
     					
     	}
 	    	else {
     		    comission = totalSalesofEachAssistant*0.01;
-    		    assist[i].comission=comission;
+    		    assist[i].setComission(comission);
     		    
     		    
     	}
@@ -37,9 +37,8 @@ public class SalaryManagement {
 
 	 		totalSalesForEachAssistant(assist,temp);
 	 		for (int i=0 ;i<100;i++) {
-	 			totalSalary=assist[i].comission + 4* assist[i].weeklySallary();
-	//	asist[i].totalSalary=totalSalary;
-	 			assist[i].totalSalary=totalSalary;
+	 			totalSalary=assist[i].getComission() + 4* assist[i].weeklySallary();
+	 			assist[i].setTotalSalary(totalSalary);
 	} 	
  
  }

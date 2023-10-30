@@ -25,11 +25,11 @@ public class Query {
 		int secondIndex=0;
 	
 		int indexOfTheMostExpensiveProduct = 0;
-		double min = transaction[0][0].totalPrice;
+		double min = transaction[0][0].getTotalPrice();
         for (int i=0 ;i<shopAssistant.length;i++) {
 	    	for (int z=0;z<transaction[1].length;z++) {
 	    		 
-	    	if (transaction[i][z].totalPrice < min) {
+	    	if (transaction[i][z].getTotalPrice() < min) {
 	    	    firstIndex = i;
 	    	    firstIndex = z;
 	    	    
@@ -37,10 +37,10 @@ public class Query {
 	             
 	    }
 
-	} double max = transaction[firstIndex][secondIndex].products[0].price ;
+	} double max = transaction[firstIndex][secondIndex].products[0].getPrice() ;
 			 for (int f=1; f<transaction[firstIndex][secondIndex].products.length; f++) {
-				if (transaction[firstIndex][secondIndex].products[f].price > max) {
-					max = transaction[firstIndex][secondIndex].products[f].price; 
+				if (transaction[firstIndex][secondIndex].products[f].getPrice() > max) {
+					max = transaction[firstIndex][secondIndex].products[f].getPrice(); 
 					indexOfTheMostExpensiveProduct = f;
 						
 				}else {}
@@ -49,12 +49,12 @@ public class Query {
 }
 
 	public double highestTotalPrice(){
-       double max = transaction[0][0].totalPrice;
+       double max = transaction[0][0].getTotalPrice();
        	for (int i=0 ;i<shopAssistant.length;i++) {
 	    	for (int z=0;z<transaction[1].length;z++) {
 	    		
-	    	if (transaction[i][z].totalPrice > max) {
-	    	        max = transaction[i][z].totalPrice;
+	    	if (transaction[i][z].getTotalPrice() > max) {
+	    	        max = transaction[i][z].getTotalPrice();
 	    	} 
 	    	else{}
 	    
@@ -63,11 +63,11 @@ public class Query {
 	    	
 		
 	public double lowestTransactionFee(){
-		double lowestFee=transaction[0][0].transactionFee;
+		double lowestFee=transaction[0][0].getTransactionFee();
 		for(int i =0;i<shopAssistant.length;i++) {
 			for(int j =0;j<transaction[1].length;j++) {
-				if(lowestFee>transaction[i][j].transactionFee) {
-					lowestFee=transaction[i][j].transactionFee;
+				if(lowestFee>transaction[i][j].getTransactionFee()) {
+					lowestFee=transaction[i][j].getTransactionFee();
 					
 				}else {}
 				}
@@ -75,10 +75,10 @@ public class Query {
 		return lowestFee;
 	}
 	public String highestSalaryShopAssistant(){
-		double maxSalary=shopAssistant[0].totalSalary;
+		double maxSalary=shopAssistant[0].getTotalSalary();
 		int asistantId=0;
 		for(int j=0 ;j <100;j++){
-			if(maxSalary<shopAssistant[j].totalSalary) {
+			if(maxSalary<shopAssistant[j].getTotalSalary()) {
 				asistantId=j;
 				
 			}
@@ -87,8 +87,8 @@ public class Query {
 			return "4) ShopAssistant id: " + shopAssistant[asistantId].id+
 					", name: "+ shopAssistant[asistantId].name + " " + shopAssistant[asistantId].surname+
 					", seniority: " +shopAssistant[asistantId].seniority()+", weekly salary: "+
-					String.format("%.2f", shopAssistant[asistantId].weeklySallary())+" commision: "+String.format("%.2f",shopAssistant[asistantId].comission)+
-					", total salary: "+ String.format("%.2f", shopAssistant[asistantId].totalSalary);                        
+					String.format("%.2f", shopAssistant[asistantId].weeklySallary())+" commision: "+String.format("%.2f",shopAssistant[asistantId].getComission())+
+					", total salary: "+ String.format("%.2f", shopAssistant[asistantId].getTotalSalary());                        
 			
 			
 		}
@@ -98,7 +98,7 @@ public class Query {
 	
 		for (int i=0;i<shopAssistant.length;i++) {
 			for (int j=0;j<transaction[1].length;j++) {
-				totalRevenueValue+= (transaction[i][j].totalPrice+transaction[i][j].transactionFee);
+				totalRevenueValue+= (transaction[i][j].getTotalPrice()+transaction[i][j].getTransactionFee());
 			}
 		}
 		
@@ -110,7 +110,7 @@ public class Query {
 	
 		for (int i=0;i<shopAssistant.length;i++) {
 			for (int j=0;j<transaction[1].length;j++) {
-				totalRevenueValue+= (transaction[i][j].totalPrice+transaction[i][j].transactionFee);
+				totalRevenueValue+= (transaction[i][j].getTotalPrice()+transaction[i][j].getTransactionFee());
 			}
 		}
 		
@@ -120,7 +120,7 @@ public class Query {
 	public String totalProfit(){
 		 double realTotalSalary = 0;
 		for(int i =0;i<100;i++) {
-			realTotalSalary += shopAssistant[i].totalSalary;
+			realTotalSalary += shopAssistant[i].getTotalSalary();
 			
 			
 		}
