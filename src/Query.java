@@ -46,7 +46,7 @@ public class Query {
 						
 				}else {}
 			 }
-	  return transaction[firstIndex][secondIndex].products[indexOfTheMostExpensiveProduct].productName;	
+	  return transaction[firstIndex][secondIndex].products[indexOfTheMostExpensiveProduct].getProductName();	
 }
 
 	public String highestTotalPrice(){
@@ -80,15 +80,15 @@ public class Query {
 	public String highestSalaryShopAssistant(){
 		double maxSalary=shopAssistant[0].getTotalSalary();
 		int asistantId=0;
-		for(int j=0 ;j <100;j++){
+		for(int j=0 ;j <shopAssistant.length;j++){
 			if(maxSalary<shopAssistant[j].getTotalSalary()) {
 				asistantId=j;
 				
 			}
 			else {}
 			}
-			return "4) ShopAssistant id: " + shopAssistant[asistantId].id+
-					", name: "+ shopAssistant[asistantId].name + " " + shopAssistant[asistantId].surname+
+			return "4) ShopAssistant id: " + shopAssistant[asistantId].getId()+
+					", name: "+ shopAssistant[asistantId].getName() + " " + shopAssistant[asistantId].getSurname()+
 					", seniority: " +shopAssistant[asistantId].seniority()+", weekly salary: "+
 					String.format("%.2f", shopAssistant[asistantId].weeklySallary())+" commision: "+String.format("%.2f",shopAssistant[asistantId].getComission())+
 					"  total salary: "+ String.format("%.2f", shopAssistant[asistantId].getTotalSalary());                        
@@ -122,7 +122,7 @@ public class Query {
 	
 	public String totalProfit(){
 		 double realTotalSalary = 0;
-		for(int i =0;i<100;i++) {
+		for(int i =0;i<shopAssistant.length;i++) {
 			realTotalSalary += shopAssistant[i].getTotalSalary();
 			
 			

@@ -61,4 +61,36 @@ public class ShopAssistant {
 		  this.comission= comission;
 	  }
 	  
+	  public String getName() {
+		  return name;
+	  }
+	  
+	  public void setName(String name) {
+		  this.name= name;
+	  }
+	  
+	  public int getId() {
+		  return id;
+	  }
+	  
+	  public void setId(int id) {
+		  this.id= id;
+	  }
+	  
+	  public String getSurname() {
+		  return name;
+	  }
+	  
+	  public void setSurname(String name) {
+		  this.surname= surname;
+	  }
+	  
+	  public int getPhoneNumber() {
+		  return phoneNumber;
+	  }
+	  
+	  public void setPhoneNumber(int phoneNumber) {
+		  this.phoneNumber= phoneNumber;
+	  }
+	  
 }
