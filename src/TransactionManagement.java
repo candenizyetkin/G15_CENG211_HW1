@@ -42,8 +42,7 @@ public class TransactionManagement {
 					  }double totalPrice=0;
 					 	for(int j =0; j<productNumber;j++) {
 					 		totalPrice+=selectedProduct[j].price*selectedProduct[j].quantity ;
-							 // selectedProduct[1].price*selectedProduct[1].quantity+
-							  //selectedProduct[2].price*selectedProduct[2].quantity;
+							 
 					 		}
 					  double fee;
 					  if(totalPrice<=499) {
@@ -55,20 +54,13 @@ public class TransactionManagement {
 					  }else {fee=totalPrice*0.09;}
 							  Transaction transactionInTwoDimantionalArray = new Transaction(transactionId,selectedProduct,totalPrice,fee);
 					 				transaction[i][z]= transactionInTwoDimantionalArray;
-					 				//System.out.println( "fee  "+transaction[i][z].transactionFee+"  totalprice"+ transaction[i][z].totalPrice+ " transaction[i][z].products[1].price "+ transaction[i][z].products[1].price + " transaction[i][z].products[1].quantity " +  transaction[i][z].products[1].quantity+" "+transaction[i][z].products[2].price + " transaction[i][z].products[2].quantity " +  transaction[i][z].products[2].quantity);
-									 		//				transaction[i][z].products[2].price + " " +  transaction[i][z].products[2].quantity+ " " +transaction[i][z].totalPrice );
-					 	//		transaction[i][z].products[1].price + " " +  transaction[i][z].products[1].quantity+ " "+
-					 		//				transaction[i][z].products[2].price + " " +  transaction[i][z].products[2].quantity+ " " +transaction[i][z].totalPrice);
+
 				
 				 }
 				 
 			}SalaryManagement a =new SalaryManagement(	shopassistant,transaction);
 			a.totalSalaryForAssistants(	shopassistant,transaction);
 
-
-			//for(int i=0 ;i<100;i++) {
-		  //           System.out.println(" "+shopassistant[i].totalSalary);
-			//}
 		       
 		return transaction;}
 	

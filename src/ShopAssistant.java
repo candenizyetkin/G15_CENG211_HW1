@@ -16,7 +16,6 @@ public class ShopAssistant {
 		this.phoneNumber = phoneNumber;
 		
 		
-		
 	}
 
 		
