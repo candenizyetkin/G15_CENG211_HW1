@@ -41,7 +41,7 @@ public class TransactionManagement {
 				 }   	
 					  }double totalPrice=0;
 					 	for(int j =0; j<productNumber;j++) {
-					 		totalPrice+=selectedProduct[j].price*selectedProduct[j].quantity ;
+					 		totalPrice+=selectedProduct[j].getPrice()*selectedProduct[j].getQuantity() ;
 							 // selectedProduct[1].price*selectedProduct[1].quantity+
 							  //selectedProduct[2].price*selectedProduct[2].quantity;
 					 		}

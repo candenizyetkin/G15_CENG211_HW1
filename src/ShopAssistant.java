@@ -5,8 +5,8 @@ public class ShopAssistant {
  String name;
   String surname;
   int phoneNumber;
- public double comission;
- public double totalSalary;
+ private double comission;
+ private double totalSalary;
 
 	ShopAssistant(int id, String name, String surname, int phoneNumber ){
 		
@@ -18,6 +18,7 @@ public class ShopAssistant {
 		
 		
 	}
+	
 
 		
 	
@@ -43,4 +44,21 @@ public class ShopAssistant {
 	
 	        return id+","+name+","+surname+","+phoneNumber+" "+ seniority()+ " "+ weeklySallary();
 	    }
+	  
+	  public double getTotalSalary() {
+		  return totalSalary;
+	  }
+	  
+	  public void setTotalSalary(double totalSalarys) {
+		  this.totalSalary= totalSalarys;
+	  }
+	  
+	  public double getComission() {
+		  return comission;
+	  }
+	  
+	  public void setComission(double comission) {
+		  this.comission= comission;
+	  }
+	  
 }

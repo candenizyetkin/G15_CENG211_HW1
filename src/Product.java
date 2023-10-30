@@ -3,8 +3,8 @@ public class Product {
 	
 	 public int id;
 	 String productName;
-	 public  double price;
-	 public  int quantity;
+	 private  double price;
+	 private  int quantity;
 	 //We used an additional attribute to our Product constructor so we could easily calculate total price in transaction management class
 	 Product(int id, String productName, double price, int quantity){
 		 this.id = id;
@@ -21,5 +21,19 @@ public class Product {
 	  public void add() {
 		  
 	  }
-	 
+	  public double getPrice() {
+		  return price;
+	  }
+	  
+	  public void setPrice(double price) {
+		  this.price= price;
+	  }
+	  
+	  public double getQuantity() {
+		  return quantity;
+	  }
+	  
+	  public void setQuantity(int quantity) {
+		  this.quantity= quantity;
+	  }
 }

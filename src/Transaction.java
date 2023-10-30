@@ -3,8 +3,8 @@ public class Transaction {
 	
 	private int id;
 	public Product[] products;
-	public double totalPrice;
-	public double transactionFee;
+	private double totalPrice;
+	private double transactionFee;
 	
 	Transaction(int id,Product[] products, double totalPrice, double transactionFee){
 		this.id = id;
@@ -20,6 +20,22 @@ public class Transaction {
 			
 	        return id+","+products+","+totalPrice+","+transactionFee;
 	    }
+	
+	public double getTotalPrice() {
+		  return totalPrice;
+	  }
+	  
+	  public void setTotalPrice(double totalPrice) {
+		  this.totalPrice= totalPrice;
+	  }
+	  
+	  public double getTransactionFee() {
+		  return transactionFee;
+	  }
+	  
+	  public void setTransactionFee(double transactionFee) {
+		  this.transactionFee= transactionFee;
+	  }
 	}
 
 
