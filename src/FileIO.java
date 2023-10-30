@@ -2,12 +2,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
-import java.util.Random;
+
 
 class FileIO {
-    // Define methods to read data from CSV files
     
-    // Method to read product data from 'products.CSV' file
     public static Product[] readProductData(String filename) {
          Product [] products = new Product [fileLineCounter(filename)] ;
      
@@ -37,11 +35,11 @@ class FileIO {
     }
     
 		 
-    public static int fileLineCounter(String dosyaAdi) {
+    public static int fileLineCounter(String fileName) {
         int lineCounter = 0;
 
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(dosyaAdi));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
             while (bufferedReader.readLine() != null) {
             	lineCounter++;
             }
