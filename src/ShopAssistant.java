@@ -1,10 +1,10 @@
 import java.util.Random;
 public class ShopAssistant {
 
-  int id;
- String name;
-  String surname;
-  int phoneNumber;
+  private int id;
+ private String name;
+  private String surname;
+  private int phoneNumber;
  private double comission;
  private double totalSalary;
 

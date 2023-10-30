@@ -18,7 +18,7 @@ public class Transaction {
 
 	public String toString(){
 			
-	        return id+","+products+","+totalPrice+","+transactionFee;
+	        return "Transaction id: "+id+", product1: "+products[0]+","+" product2: "+products[1]+","+" product3: "+products[0]+", total price: "+totalPrice+", transaction fee: "+String.format("%.2f", transactionFee);
 	    }
 	
 	public double getTotalPrice() {

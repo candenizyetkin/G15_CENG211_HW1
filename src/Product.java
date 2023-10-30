@@ -2,7 +2,7 @@
 public class Product {
 	
 	 public int id;
-	 String productName;
+	 private String productName;
 	 private  double price;
 	 private  int quantity;
 	 //We used an additional attribute to our Product constructor so we could easily calculate total price in transaction management class

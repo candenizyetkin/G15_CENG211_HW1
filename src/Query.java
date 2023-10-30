@@ -13,8 +13,9 @@ public class Query {
 		totalProfit();
 	}
 	public void displayer() {
-		 System.out.println("1) The most expensive product in the lowest price transaction is: "+mostExpensiveProductInTheLowestPriceTransaction());
-		 System.out.println("2) The highest total price is: "+String.format("%.2f",highestTotalPrice()));
+		 System.out.println("1) The highest total price transaction: "+highestTotalPrice());
+		 System.out.println("2) The most expensive product in the lowest price transaction is: "+mostExpensiveProductInTheLowestPriceTransaction());
+		
 		 System.out.println("3) The lowest transaction fee is: "+String.format("%.2f",lowestTransactionFee()));
 		 System.out.println(highestSalaryShopAssistant());
 		 System.out.println(totalRevenue());
@@ -48,18 +49,20 @@ public class Query {
 	  return transaction[firstIndex][secondIndex].products[indexOfTheMostExpensiveProduct].productName;	
 }
 
-	public double highestTotalPrice(){
+	public String highestTotalPrice(){
        double max = transaction[0][0].getTotalPrice();
+       String trs="";
        	for (int i=0 ;i<shopAssistant.length;i++) {
 	    	for (int z=0;z<transaction[1].length;z++) {
 	    		
 	    	if (transaction[i][z].getTotalPrice() > max) {
 	    	        max = transaction[i][z].getTotalPrice();
+	    	        trs=transaction[i][z].toString();
 	    	} 
 	    	else{}
 	    
 	    }
-	}return max;}
+	}return trs;}
 	    	
 		
 	public double lowestTransactionFee(){
@@ -88,7 +91,7 @@ public class Query {
 					", name: "+ shopAssistant[asistantId].name + " " + shopAssistant[asistantId].surname+
 					", seniority: " +shopAssistant[asistantId].seniority()+", weekly salary: "+
 					String.format("%.2f", shopAssistant[asistantId].weeklySallary())+" commision: "+String.format("%.2f",shopAssistant[asistantId].getComission())+
-					", total salary: "+ String.format("%.2f", shopAssistant[asistantId].getTotalSalary());                        
+					"  total salary: "+ String.format("%.2f", shopAssistant[asistantId].getTotalSalary());                        
 			
 			
 		}

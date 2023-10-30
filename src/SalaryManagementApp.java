@@ -6,9 +6,10 @@ public class SalaryManagementApp {
 		 Product[] productArray = FileIO.readProductData("src\\products.csv");
 		 ShopAssistant[] shopAssistantArray= FileIO.readShopAssistantData("src\\shopAssistants.csv");
 		 TransactionManagement app = new TransactionManagement(FileIO.IdCounter("src\\products.csv"),productArray, shopAssistantArray);
-		 Query show= new Query(shopAssistantArray, app.randomProductAssigner(3,15));
-		 show.displayer();
+		 Query showapp= new Query(shopAssistantArray, app.randomProductAssigner(3,15));
+		 showapp.displayer();
 		
+	
 		
 
 		
