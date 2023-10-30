@@ -13,9 +13,9 @@ public class Query {
 		totalProfit();
 	}
 	public void displayer() {
-		 System.out.println("The most expensive product in the lowest price transaction is: "+mostExpensiveProductInTheLowestPriceTransaction());
-		 System.out.println("The highest total price is: "+highestTotalPrice());
-		 System.out.println("The lowest transaction fee is: "+lowestTransactionFee());
+		 System.out.println("1) The most expensive product in the lowest price transaction is: "+mostExpensiveProductInTheLowestPriceTransaction());
+		 System.out.println("2) The highest total price is: "+highestTotalPrice());
+		 System.out.println("3) The lowest transaction fee is: "+lowestTransactionFee());
 		 System.out.println(highestSalaryShopAssistant());
 		 System.out.println(totalRevenue());
 		 System.out.println(totalProfit());
@@ -84,7 +84,7 @@ public class Query {
 			}
 			else {}
 			}
-			return "ShopAssistant id: " + shopAssistant[asistantId].id+
+			return "4) ShopAssistant id: " + shopAssistant[asistantId].id+
 					", name: "+ shopAssistant[asistantId].name + " " + shopAssistant[asistantId].surname+
 					", seniority: " +shopAssistant[asistantId].seniority()+", weekly salary: "+
 					shopAssistant[asistantId].weeklySallary()+" "+shopAssistant[asistantId].comission+
@@ -114,7 +114,7 @@ public class Query {
 			}
 		}
 		
-	return " The total revenue that is earned from 1500 transactions is"+ totalRevenueValue;
+	return "5) The total revenue that is earned from 1500 transactions is"+ totalRevenueValue;
 	}
 	
 	public String totalProfit(){
@@ -126,6 +126,6 @@ public class Query {
 		}
 		double totalProfit = totalRevenueValue()-realTotalSalary;
 		
-	return 		"The total profit that is earned after paying the shop assistant salaries is"+totalProfit;
+	return 		"6) The total profit that is earned after paying the shop assistant salaries is"+totalProfit;
 	}
 }

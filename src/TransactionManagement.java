@@ -16,7 +16,7 @@ public class TransactionManagement {
 		
 		public Transaction[][] randomProductAssigner(int productNumber,int transactionNumber) {
 			transaction= new Transaction[shopassistant.length][transactionNumber];
-			FileIO.readProductData("C:\\Users\\genyu\\Documents\\GitHub\\G15_CENG211_HW1\\src\\products.csv");
+			
 			int transactionId=0;
 			 
 			for(int i=0 ;i<shopassistant.length;i++) {
@@ -55,9 +55,10 @@ public class TransactionManagement {
 					  }else {fee=totalPrice*0.09;}
 							  Transaction transactionInTwoDimantionalArray = new Transaction(transactionId,selectedProduct,totalPrice,fee);
 					 				transaction[i][z]= transactionInTwoDimantionalArray;
-					 				//System.out.println( transaction[i][z].transactionFee+" weferg"+ transaction[i][z].totalPrice );
-					 			//transaction[i][z].products[1].price + " " +  transaction[i][z].products[1].quantity+ " "+
-					 			//			transaction[i][z].products[2].price + " " +  transaction[i][z].products[2].quantity+ " " +transaction[i][z].totalPrice);
+					 				//System.out.println( "fee  "+transaction[i][z].transactionFee+"  totalprice"+ transaction[i][z].totalPrice+ " transaction[i][z].products[1].price "+ transaction[i][z].products[1].price + " transaction[i][z].products[1].quantity " +  transaction[i][z].products[1].quantity+" "+transaction[i][z].products[2].price + " transaction[i][z].products[2].quantity " +  transaction[i][z].products[2].quantity);
+									 		//				transaction[i][z].products[2].price + " " +  transaction[i][z].products[2].quantity+ " " +transaction[i][z].totalPrice );
+					 	//		transaction[i][z].products[1].price + " " +  transaction[i][z].products[1].quantity+ " "+
+					 		//				transaction[i][z].products[2].price + " " +  transaction[i][z].products[2].quantity+ " " +transaction[i][z].totalPrice);
 				
 				 }
 				 
